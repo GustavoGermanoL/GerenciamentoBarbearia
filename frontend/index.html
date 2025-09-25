@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Barbearia Premium</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Barbearia Premium</h1>
+        <p>Agende seu horário com os melhores</p>
+    </header>
+
+    <main id="app">
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+            <p>Carregando...</p>
+        </div>
+
+        <div id="error-message" class="hidden"></div>
+
+        <div id="app-container">
+            
+            <section id="step-barbers" class="step">
+                <h2>1. Escolha seu Barbeiro</h2>
+                <div id="barbers-list" class="grid-container">
+                    </div>
+            </section>
+
+            <section id="step-services" class="step hidden">
+                <h2>2. Escolha o Serviço</h2>
+                <div id="services-list" class="list-container">
+                    </div>
+                <button id="back-to-barbers" class="btn btn-secondary">Voltar</button>
+            </section>
+
+            <section id="step-datetime" class="step hidden">
+                <h2>3. Escolha a Data e o Horário</h2>
+                <div class="date-picker-container">
+                    <label for="date-picker">Selecione uma data:</label>
+                    <input type="date" id="date-picker">
+                </div>
+                <div id="available-times" class="grid-container times-grid">
+                    </div>
+                 <button id="back-to-services" class="btn btn-secondary">Voltar</button>
+            </section>
+
+            <section id="step-client-info" class="step hidden">
+                <h2>4. Suas Informações</h2>
+                <form id="client-form">
+                    <div class="form-group">
+                        <label for="client-name">Seu Nome</label>
+                        <input type="text" id="client-name" required placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="client-phone">Seu Telefone</label>
+                        <input type="tel" id="client-phone" required placeholder="(XX) XXXXX-XXXX">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Confirmar Agendamento</button>
+                    <button type="button" id="back-to-datetime" class="btn btn-secondary">Voltar</button>
+                </form>
+            </section>
+            
+            <section id="step-confirmation" class="step hidden">
+                <div class="confirmation-message">
+                    <h2>Agendamento Confirmado!</h2>
+                    <p>Vemos você em breve.</p>
+                    <button id="new-appointment" class="btn btn-primary">Fazer Novo Agendamento</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
