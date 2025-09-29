@@ -1,5 +1,6 @@
 package com.Barbearia.BarbeariaProject.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,4 +13,5 @@ public interface IHorarioTrabalhoRepository extends JpaRepository<HorarioTrabalh
 
     Optional<HorarioTrabalho> findByBarbeiroIdAndDiaSemana(Long barbeiroId, Integer diaSemana);
 
+    List<HorarioTrabalho> findAllByBarbeiroIdOrderByDiaSemana(Long babeiroId);
 }
